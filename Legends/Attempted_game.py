@@ -14,7 +14,7 @@ From Undertale:
 import random
 import os
 #key game classes
-os.chdir("/Users/TEST/Documents/Adventure RPG prototype/")
+os.chdir("C:/Users/Austin/Desktop/Comp Sci/Austin's Projects/Adventure Game")
 from charene import *
 from gamemaps import *
         
@@ -122,7 +122,10 @@ def gamebegin():
     
 
 def game():
-    print("Soon")
+    print("In Progress")
+    clr()
+    clr()
+    
     continuity()
     
     
@@ -132,4 +135,3 @@ while exiter == True:
     mainmenu()
     game()
           
-
