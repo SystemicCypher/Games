@@ -37,3 +37,4 @@ class Friend(Character):
     pass
 #individual npc data            
     
+
