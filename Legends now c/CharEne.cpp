@@ -10,21 +10,24 @@ class Character{
 public:
 	Character();
 	//mutators
-	void change_name(const string arg)//unfinished. Ending for today ^w^
+	void change_name(const string name);
+
 private:
 	string name = "";
 };
 
-class Player{
+class Player: public Character{
 public:
 	//constructor
-	Player();
+	//Player();
 	//mutators
-
+	void level_up();
+	
 
 private:
 	string name = "";
-	int HP, ATK, DEF, SPD, LVL;
+	int HP, ATK, DEF, SPD, LVL, exp;
+	exp = 0
 	HP = 100;
 	ATK = 10;
 	DEF = 10;
