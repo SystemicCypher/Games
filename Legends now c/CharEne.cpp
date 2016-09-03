@@ -4,30 +4,30 @@
 #define CHARACTER_H_
 #include <string>
 #include <iostream>
+using namespace std;
 
 class Character{
 public:
 	Character();
+	//mutators
+	void change_name(const string name);
+
 private:
 	string name = "";
-	int HP, ATK, DEF, SPD, LVL;
-	HP = 100;
-	ATK = 10;
-	DEF = 10;
-	SPD = 10;
-	LVL = 1;
 };
 
-class Player{
+class Player: public Character{
 public:
 	//constructor
-	Player();
+	//Player();
 	//mutators
-
+	void level_up();
+	
 
 private:
 	string name = "";
-	int HP, ATK, DEF, SPD, LVL;
+	int HP, ATK, DEF, SPD, LVL, exp;
+	exp = 0
 	HP = 100;
 	ATK = 10;
 	DEF = 10;
