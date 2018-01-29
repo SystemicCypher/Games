@@ -1,5 +1,6 @@
  # Characters
- This file defines the character base class that controls the character traits and creation system.
+ This folder defines the character base class that controls the character traits and creation system.
+ # Race
  There will be several different races with their corresponding stats: (the numbers are variants)
  *	Human - x  races/hum_00.scala
  *	Elf - x    races/elf_00.scala
@@ -12,3 +13,5 @@
  *	Goblin -
  *	etc... (maybe more to be added later) 
  [All x-ed races have been implemented, others will be soon]
+ 
+ # Class
