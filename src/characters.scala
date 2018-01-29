@@ -27,7 +27,7 @@
  *	
  */
 
-abstract class Character{
+trait Character{
 //Values and Stats/////////////////////////////////
 	protected var name: String
 //	Hit Points
@@ -86,10 +86,68 @@ abstract class Character{
 
 //GAME DETAILS~~~~~~~~~~~~~~~
 
-trait Playable{
-	
+class BaseCharacter extends Character{
+	override def assignStats(health: Int, strength: Int, dexterity:Int, constitution:Int, intelligence:Int, wisdom:Int, charisma:Int): Unit = {
+		maxHP = health
+		str = strength
+		dex = dexterity
+		cons = constitution
+		intl = intelligence
+		wis = wisdom
+		cha = charisma
+
+		lvl = 1
+		exp = 0
+		
+	}
+
+	override def assignGender(gender: Int): Unit = {
+		gend = gender
+	}
+
+	override def assignName(newName: String): Unit = {
+		name = newName
+	}
+
+	override def listStats(): List(Int) = {
+		List(hp, str, dex, cons, intl, wis, cha, lvl, exp, expToNext)
+	}
+
+
+
+	override def hpAffected(fCalc: () => Int): Unit = {
+		if(fCalc() == 0){
+			println("It had no effect...")
+		}
+		else if(fCalc() < 0){
+			
+		}
+		else{
+			
+		}
+	}
 	
 }
+
+abstract class CharacterDecorator(decoratedCharacter: Character) extends Character{
+	maxHP = decoratedCharacter.maxHP
+	cha = decoratedCharacter.cha
+	str = decoratedCharacter.str
+	intl = decoratedCharacter.intl
+	dex = decoratedCharacter.dex
+	cons = decoratedCharacter.cons
+	wis = decoratedCharacter.wis
+
+
+
+
+}
+
+
+
+
+
+
 
 trait NPC extends Character{
 	// Assign level-up stats
@@ -137,34 +195,8 @@ trait Undead extends Character{
 
 
 class Human extends Character{
-	//ACTIONS////////////////////////////////////////
-	// Required assignments - only when created
-	override def assignStats(health: Int, strength: Int, dexterity:Int, constitution:Int, intelligence:Int, wisdom:Int, charisma:Int): Unit = {
 
-	}
-	override def assignGender(gender: Int): Unit = {
-		gend = gender
-	}
-	override def assignName(newName: String): Unit = {
-		name = newName
-	}
-	override def listStats(): List(Int) = {
-
-	}
-
-
-
-	override def hpAffected(fCalc: () => Int): Unit = {
-		if(fCalc() == 0){
-			println("It had no effect...")
-		}
-		else if(fCalc() < 0){
-			
-		}
-		else{
-			
-		}
-	}
+	
 
 	// Combat system operations
 	override def damageCalc(): Int = {
