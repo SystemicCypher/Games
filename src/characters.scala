@@ -1,13 +1,13 @@
 /*
- *	This file defines classes that control the character system.
- *	There will be several different races with their corresponding stats: 
- *	Human - x
- *	Elf - x
- *	Orc - x
- *	Dwarf - x 
+ *	This file defines the character base class that controls the character traits and creation system.
+ *	There will be several different races with their corresponding stats: (the numbers are variants)
+ *	Human - x  races/hum_00.scala
+ *	Elf - x    races/elf_00.scala
+ *	Orc - x    races/orc_00.scala
+ *	Dwarf - x  races/dwa_00.scala
  *	Dragon -
  *	Troll - 
- *	Hobbit - x
+ *	Hobbit - x races/hob_00.scala
  *	Demon -
  *	Goblin -
  *	etc... (maybe more to be added later) [All x-ed races have been implemented, others will be soon]
@@ -124,97 +124,5 @@ abstract class CharacterDecorator(decoratedCharacter: Character) extends Charact
 	cons = decoratedCharacter.cons
 	wis = decoratedCharacter.wis
 
-
-
-
 }
-
-
-
-
-
-
-
-trait NPC extends Character{
-	// Assign level-up stats
-	abstract override def assignLvlUpStats(lvlUpchk: () => Boolean): Unit = {
-
-	}
-
-	// Level up check
-	 abstract override def levelUpCheck(): Boolean = {
-
-	}
-}
-
-
-//Level difficulties
-trait EasyLevel extends Character{
-	// Assign level-up stats
-	abstract override def assignLvlUpStats(lvlUpchk: () => Boolean): Unit = {
-
-	}
-
-	// Level up check
-	 abstract override def levelUpCheck(): Boolean = {
-
-	}
-}
-
-//Zombie or not?
-trait Living extends Character{
-	// Status checks
-	override def isAlive(): Boolean = {
-		hp > 0
-	}
-}
-
-trait Undead extends Character{
-	// Status checks
-	override def isAlive(): Boolean = {
-		hp <= 0
-	}
-}
-
-
-//RACES~~~~~~~~~~~~~~~~~~~~~~
-
-
-class Human extends Character{
-
-	
-
-	// Combat system operations
-	override def damageCalc(): Int = {
-
-	} 
-	override def dodge(): Boolean = {
-
-	}
-	override def attack(): Unit = {
-
-	}
-
-	// Healing operations
-	override def healCalc(): Int = {
-
-	}
-
-}
-/*
-class Elf extends Character{
-
-}
-
-class Orc extends Character {
-
-}
-
-class Dwarf extends Character{
-
-}
-
-class Hobbit extends Character{
-}
-*/
 
