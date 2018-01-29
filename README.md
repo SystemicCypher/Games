@@ -1,9 +1,26 @@
-# 
-RPG game implementing D20 system
+# Really Pitiful Game
+A simple rpg game based on Munchkin
 
 This is meant to be a single-player RP experience. 
-The goal is for this to be as open-ended as possible while still having some form of structure.
-Essentially a DM-less RP session.
-Current progress: spells class has been introduced as well as characters. 
-Next: finish character logic
-After: finish spells logic
+It's basically a fight and level up game, no other mechanics have been implemented.
+This may just be a gamemode soon and the main game will be the more open-ended experience intended.
+
+# To-Do
+Finish class implementation (spells, attacks, and other such things for mages, fighters, rangers, etc)
+
+Finish race implementation (Elves, dwarves, humans, and orcs aren't gonna implement themselves)
+
+Allow character creator to create characters
+
+Make NPCs
+
+Let NPCs do things
+
+Allow for parties to be formed
+
+Random enemies appear
+
+Combat (need to punch orcs in the face)
+
+visual interface - command line
+
