@@ -1,8 +1,8 @@
 # Really Pitiful Game
 A simple rpg game based on Munchkin
 
-This is meant to be a single-player RP experience. 
-It's basically a fight and level up game, no other mechanics have been implemented.
+This is meant to be a single-player RPG experience that does the fun stuff, combat. 
+It's basically a fight and level up game, no other mechanics have been implemented, they will in the future....maybe.
 This may just be a gamemode soon and the main game will be the more open-ended experience intended.
 
 # To-Do
