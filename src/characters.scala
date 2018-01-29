@@ -32,6 +32,7 @@ abstract class Character{
 	protected var name: String
 //	Hit Points
 	protected var hp: Int
+	protected var maxHP: Int 
 
 //	Stats
 	protected var str: Int
@@ -50,13 +51,14 @@ abstract class Character{
 //	Level and experience points
 	protected var lvl: Int
 	protected var exp: Int
+	protected var expToNext: Int
 
 
 //ACTIONS////////////////////////////////////////
 // Required assignments - only when created
-	def assignStats(): Unit
-	def assignGender(): Unit
-	def assignName(): Unit
+	def assignStats(health: Int, strength: Int, dexterity:Int, constitution:Int, intelligence:Int, wisdom:Int, charisma:Int): Unit
+	def assignGender(gender: Int): Unit
+	def assignName(newName: String): Unit
 
 // Assign level-up stats
 	def assignLvlUpStats(lvlUpchk: () => Boolean): Unit
@@ -98,6 +100,66 @@ trait NPC{
 
 
 class Human extends Character{
+	//ACTIONS////////////////////////////////////////
+	// Required assignments - only when created
+	override def assignStats(health: Int, strength: Int, dexterity:Int, constitution:Int, intelligence:Int, wisdom:Int, charisma:Int): Unit = {
+
+	}
+	override def assignGender(gender: Int): Unit = {
+		gend = gender
+	}
+	override def assignName(newName: String): Unit = {
+		name = newName
+	}
+
+	// Assign level-up stats
+	override def assignLvlUpStats(lvlUpchk: () => Boolean): Unit = {
+
+	}
+
+	// Level up check
+	override def levelUpCheck(): Boolean = {
+
+	}
+
+	// Status checks
+	override def isAlive(): Boolean = {
+		hp > 0
+	}
+
+	override def listStats(): List(Int) = {
+
+	}
+
+
+
+	override def hpAffected(fCalc: () => Int): Unit = {
+		if(fCalc() == 0){
+			println("It had no effect...")
+		}
+		else if(fCalc() < 0){
+			
+		}
+		else{
+			
+		}
+	}
+
+	// Combat system operations
+	override def damageCalc(): Int = {
+
+	} 
+	override def dodge(): Boolean = {
+
+	}
+	override def attack(): Unit = {
+
+	}
+
+	// Healing operations
+	override def healCalc(): Int = {
+
+	}
 
 }
 /*
@@ -158,76 +220,61 @@ trait Fighter extends Character{
 */
 
 trait Mage extends Character{
-// HP changes
-	abstract override def hpAffected(fCalc: () => Int): Unit = {
-		if(fCalc() == 0){
-
-		}
-		else if(fCalc() < 0){
-			// damage resistance calculations
-		}
-		else{
-			
-		}
-	}
-
-// Healing operations
-	abstract override def healCalc(): Int 
-
-	// Combat system operations
-	abstract override def damageCalc(): Int
-
-	abstract override def dodge(): Boolean
-
-	abstract override def attack(): Unit
-	
-
 }
 
 trait BlackMage extends Mage{
 	abstract override def useSpell(spell: Spell, target: Character): Unit = {
-
-		
-		if(spell.spellType == SpellType.Black) {
-			if(target.dodge){
-				println("Missed!")
-			}
+		if(lvl >= (spell.spellLevel * 5)){
+			if(spell.spellType == SpellType.Black) {
+				if(target.dodge){
+					println("Missed!")
+				}
+				else{
+					target.hpAffected(damageCalc)				
+				}
+			}	
 			else{
-				target.hpAffected(damageCalc)				
+				println("Black mages can only use black magic spells...")
 			}
 		}
-
 		else{
-			println("Black mages can only use black magic spells...")
+			println("Level too low!")
 		}
 	}
 }
 
 trait RedMage extends Mage{
 	abstract override def useSpell(spell: Spell, target: Character): Unit = {
-		if(spell.spellType == SpellType.Black) {
-			if(target.dodge){
-				println("Missed!")
-			}
-			else{
-				target.hpAffected(damageCalc)				
-			}
-		}
-
-		else if(spell.spellType == SpellType.Red){
-
+		if(lvl >= (spell.spellLevel * 5) && spell.spellLevel < 6){
+				if(target.dodge){
+					println("Missed!")
+				}
+				else{
+					target.hpAffected(damageCalc)				
+				}
 		}
 		else{
-			
+			println("Level too low!")
 		}
 	}
 }
 
 trait WhiteMage extends Mage{
 	abstract override def useSpell(spell: Spell, target: Character): Unit = {
-
+		if(lvl >= (spell.spellLevel * 5)){
+			if(spell.spellType == SpellType.White) {
+					target.hpAffected(healCalc)				
+			}	
+			else{
+				println("White mages can only use white magic spells...")
+			}
+		}
+		else{
+			println("Level too low!")
+		}
 	}
 }
+
 /*
 trait Thief extends Character{
 // Required stats assignment - only when created

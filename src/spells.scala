@@ -23,7 +23,7 @@ abstract class Spell{
 
 class Fireball extends Spell{
 	spellType = SpellType.Black
-	spellLevel = 1
+	spellLevel = 0
 	spellEffects = SpellEffect.Damage
 	name = "fireball"
 }
