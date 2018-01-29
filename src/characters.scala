@@ -87,13 +87,50 @@ abstract class Character{
 //GAME DETAILS~~~~~~~~~~~~~~~
 
 trait Playable{
-	val hello = "Hello"
+	
+	
 }
-/*
-trait NPC{
 
+trait NPC extends Character{
+	// Assign level-up stats
+	abstract override def assignLvlUpStats(lvlUpchk: () => Boolean): Unit = {
+
+	}
+
+	// Level up check
+	 abstract override def levelUpCheck(): Boolean = {
+
+	}
 }
-*/
+
+
+//Level difficulties
+trait EasyLevel extends Character{
+	// Assign level-up stats
+	abstract override def assignLvlUpStats(lvlUpchk: () => Boolean): Unit = {
+
+	}
+
+	// Level up check
+	 abstract override def levelUpCheck(): Boolean = {
+
+	}
+}
+
+//Zombie or not?
+trait Living extends Character{
+	// Status checks
+	override def isAlive(): Boolean = {
+		hp > 0
+	}
+}
+
+trait Undead extends Character{
+	// Status checks
+	override def isAlive(): Boolean = {
+		hp <= 0
+	}
+}
 
 
 //RACES~~~~~~~~~~~~~~~~~~~~~~
@@ -111,22 +148,6 @@ class Human extends Character{
 	override def assignName(newName: String): Unit = {
 		name = newName
 	}
-
-	// Assign level-up stats
-	override def assignLvlUpStats(lvlUpchk: () => Boolean): Unit = {
-
-	}
-
-	// Level up check
-	override def levelUpCheck(): Boolean = {
-
-	}
-
-	// Status checks
-	override def isAlive(): Boolean = {
-		hp > 0
-	}
-
 	override def listStats(): List(Int) = {
 
 	}
