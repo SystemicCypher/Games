@@ -1,5 +1,5 @@
 # Really Pitiful Game
-A simple rpg game based on Munchkin
+A simple rpg game based on DnD
 
 This is meant to be a single-player RPG experience that does the fun stuff, combat. 
 It's basically a fight and level up game, no other mechanics have been implemented, they will in the future....maybe.
