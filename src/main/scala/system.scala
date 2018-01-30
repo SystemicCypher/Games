@@ -95,7 +95,11 @@ object RPGsystem{
 
 //Game
 	def game(){
-		println()
+		println("Your name is:")
+		println(playerCharacter.name)
+		println("a")
+		println(playerCharacter.race)
+		println(playerCharacter.clas)
 
 	}
 
@@ -129,6 +133,8 @@ object RPGsystem{
 			case unexpected => characterCreator2()
 		}
 		if(raceChosen == "2") mageSpecific()
+		val nameChosen = readLine("What will your name be?\n")
+		playerCharacter.name = nameChosen
 		game()
 	}
 
