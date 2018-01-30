@@ -1,11 +1,19 @@
 package chara.races
 import chara._ 
 class Orc(char: Characterg) extends RaceDecorator(char){
-	str = super.str + 4 
-	dex = super.dex + 0
-	cons = super.cons + 0
-	intl = super.intl + 0
-	wis = super.wis + 0
-	cha = super.cha + 0
-	race = "orc"
+	override var str = char.str + 4 
+	override var dex = char.dex + 0
+	override var cons = char.cons + 0
+	override var intl = char.intl + 0
+	override var wis = char.wis + 0
+	override var cha = char.cha + 0
+	override var race = "orc"
+
+	override var name = char.name
+	override var clas = char.clas
+	override var exp = char.exp
+	override var mana = char.mana
+	override var lvl = char.lvl
+	override var hp = char.hp
+	override var maxHP = char.maxHP
 }

@@ -8,7 +8,7 @@ package chara
 import scala.collection.mutable.ArrayBuffer
 //import skill.spells.Spell
 
-trait Characterg{
+abstract class Characterg{
 //Values and Stats/////////////////////////////////
 	var name: String
 //	Hit Points
@@ -29,7 +29,6 @@ trait Characterg{
 //	Level and experience points
 	var lvl: Int
 	var exp: Int
-	var expToNext: Int 
 
 //Class and race checker
 	var race:String 
@@ -42,29 +41,29 @@ trait Characterg{
 
 class BaseCharacter extends Characterg{
 //Values and Stats/////////////////////////////////
-	name = ""
+	override var name = ""
 //	Hit Points
-	hp = 10
-	maxHP = 10
+	override var hp = 10
+	override var maxHP = 10
 
 //	Stats     10 is average, one should be able to rearrange these
-	str = 10
-	dex = 10
-	cons = 10
-	intl = 10
-	wis = 10
-	cha = 10
+	override var str = 10
+	override var dex = 10
+	override var cons = 10
+	override var intl = 10
+	override var wis = 10
+	override var cha = 10
 
 //	Mana
-	mana = 0 //established as a function of int and wis
+	override var mana = 0 //established as a function of int and wis
 
 //	Level and experience points
-	lvl = 1
-	exp = 0
+	override var lvl = 1
+	override var exp = 0
 
 //Class and race checker
-	race = ""
-	clas = ""
+	override var race = ""
+	override var clas = ""
 
 }
 

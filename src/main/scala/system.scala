@@ -95,7 +95,7 @@ object RPGsystem{
 
 //Game
 	def game(){
-		//3 stages explore, combat, find treasure. I can fix this up later...
+		println()
 
 	}
 
@@ -103,7 +103,7 @@ object RPGsystem{
 	def characterCreator1(): Unit ={
 		println("Let's create your character.")
 		println("Choose a race:")
-		val raceChosen = readLine("1.Human  2.Elf  3.Dwarf  4.Orc  5.Hobbit")
+		val raceChosen = readLine("1.Human  2.Elf  3.Dwarf  4.Orc  5.Hobbit\n")
 		raceChosen match{
 			case "1" => playerCharacter = new Human(playerCharacter)
 			case "2" => playerCharacter = new Elf(playerCharacter)
@@ -118,7 +118,7 @@ object RPGsystem{
 
 	def characterCreator2(): Unit = {
 		println("Choose a class:")
-		val raceChosen = readLine("1.Fighter  2.Mage  3.Ranger 4.Paladin\n 5.Martial Artist 6.Thief")
+		val raceChosen = readLine("1.Fighter  2.Mage  3.Ranger 4.Paladin\n 5.Martial Artist 6.Thief\n")
 		raceChosen match{
 			case "1" => playerCharacter = new Fighter(playerCharacter)
 			case "2" => playerCharacter = new Mage(playerCharacter)
@@ -134,7 +134,7 @@ object RPGsystem{
 
 	def mageSpecific(): Unit = {
 		println("What kind of mage do you want to be?")
-		val mageChoice = readLine("1.Black Mage  2.White Mage  3.Red Mage")
+		val mageChoice = readLine("1.Black Mage  2.White Mage  3.Red Mage\n")
 		mageChoice match{
 			case "1" => playerCharacter = new BlkMage(playerCharacter)
 			case "2" => playerCharacter = new WhtMage(playerCharacter)
@@ -146,7 +146,7 @@ object RPGsystem{
 //The main menu...pretty self-explanatory
 	def mainMenu(): Unit = {
 		println("Would you like to play the game or exit?")
-		val choice = readLine("1. Play game      2.Exit")
+		val choice = readLine("1. Play game      2.Exit\n")
 		choice match{
 			case "1" => characterCreator1()
 			case "2" => println("Goodbye!")

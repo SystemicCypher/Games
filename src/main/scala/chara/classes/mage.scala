@@ -1,40 +1,29 @@
 package chara.classes
 import chara._ 
 class Mage(char: Characterg) extends ClassDecorator(char){
-//Values and Stats/////////////////////////////////
-	name = char.name
-//	Hit Points
-	hp = char.hp
-	maxHP = char.maxHP
+	override var str = char.str  
+	override var dex = char.dex 
+	override var cons = char.cons 
+	override var intl = char.intl 
+	override var wis = char.wis 
+	override var cha = char.cha 
+	override var race = char.race
 
-//	Stats     10 is average, one should be able to rearrange these
-	str = char.str
-	dex = char.dex
-	cons = char.cons
-	intl = char.intl
-	wis = char.wis
-	cha = char.cha
-
-//	Mana
-	mana = char.mana //established as a function of int and wis
-
-//	Level and experience points
-	lvl = char.lvl
-	exp = char.exp
-
-//Class and race checker
-	race = char.race
-	clas = char.clas
-
-	clas = "mage"
+	override var name = char.name
+	override var clas = "mage"
+	override var exp = char.exp
+	override var mana = char.mana
+	override var lvl = char.lvl
+	override var hp = char.hp
+	override var maxHP = char.maxHP
 }
 
 class BlkMage(char: Characterg) extends Mage(char){
-	clas = "black" + super.clas
+	clas = "black" + char.clas
 }
 class WhtMage(char: Characterg) extends Mage(char){
-	clas = "white" + super.clas
+	clas = "white" + char.clas
 }
 class RedMage(char: Characterg) extends Mage(char){
-	clas = "red" + super.clas
+	clas = "red" + char.clas
 }
