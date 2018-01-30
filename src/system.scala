@@ -1,4 +1,12 @@
+/*
+ *	The core of the rpg system, this file contains all the functions needed to operate the game.
+ *	It also contains all possible game states - represented by a finite state machine.
+ *	
+ *
+*/
 object RPGsystem{
+//Utility functions
+
 //Random Number Generator...or for this game RNGsus
 	val rngsus = scala.util.Random
 //Calculates the +1, +2, etc.. boosts for abilities from stats
@@ -37,6 +45,31 @@ object RPGsystem{
 	}
 
 //Experience to next level function
-	val expToNextLevel = (char: Character) => 
+	val expToNextLevel = (char: Character) => char.lvl * 100 - char.exp
+
+
+
+
+
+
+
+
+//The game finite state machine! That's all deliniated below 
+
+
+//Character Creation
+	def characterCreator(){
+
+	}
+
+//The main menu...pretty self-explanatory
+	def mainMenu(): Unit = {
+
+	}
+
+//Run the game
+	def run(): Unit = {
+		mainMenu()
+	}
 
 }
