@@ -1,3 +1,5 @@
+package chara.classes
+
 abstract class ClassDecorator extends CharacterDecorator{
 	//Values and Stats/////////////////////////////////
 	name = char.name

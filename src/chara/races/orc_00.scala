@@ -1,3 +1,5 @@
+package chara.races
+
 class Orc(char: Character) extends RaceDecorator(char){
 	str = super.str + 4 
 	dex = super.dex + 0

@@ -1,3 +1,5 @@
+package chara.races
+
 class Dwarf(char: Character) extends RaceDecorator(char){
 	str = super.str + 0 
 	dex = super.dex + 0

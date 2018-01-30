@@ -1,3 +1,5 @@
+package com.chara.classes
+
 class Mage(char: Character) extends ClassDecorator(char){
 	clas = "mage"
 }

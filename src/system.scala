@@ -4,9 +4,17 @@
  *	These are all essentially utility functions and are separate from the main class so they may be used and modified as needed
  *
 */
+import skill.spells._
+import chara.Character
+import chara.races._
+import chara.classes._
 
 object RPGsystem{
 //Utility functions
+	var playerCharacter: Character
+	def acceptCharacter(char: Character): Unit = {
+		playerCharacter = char
+	}
 
 //Random Number Generator...or for this game RNGsus
 	val rngsus = scala.util.Random
@@ -18,7 +26,7 @@ object RPGsystem{
 
 //Actually uses the damage to some effect 
 	def damageDeal(damage: Character => Int, target:Character, attacker: Character): Unit = {
-		if(target.hp - damage(attacker) +  <= 0) {
+		if(target.hp - damage(attacker)  <=  0) {
 			target.hp = 0 
 			println(s"$target.name has died.")
 		}
@@ -73,16 +81,76 @@ object RPGsystem{
 
 
 //The game finite state machine! That's all deliniated below 
+//Combat functions
+	def playerTurn(){
 
+	}
+	def enemyTurn(){
+
+	}
+
+
+
+
+//Game
+	def game(){
+		//3 stages explore, combat, find treasure. I can fix this up later...
+
+	}
 
 //Character Creation
-	def characterCreator(){
+	def characterCreator1(): Unit ={
+		println("Let's create your character.")
+		println("Choose a race:")
+		val raceChosen = readln("1.Human  2.Elf  3.Dwarf  4.Orc  5.Hobbit")
+		raceChosen match{
+			case 1 => playerCharacter = new Human(playerCharacter)
+			case 2 => playerCharacter = new Elf(playerCharacter)
+			case 3 => playerCharacter = new Dwarf(playerCharacter)
+			case 4 => playerCharacter = new Orc(playerCharacter)
+			case 5 => playerCharacter = new Hobbit(playerCharacter)
+			case unexpected => characterCreator1()
+		}
+		characterCreator2()
 
+	}
+
+	def characterCreator2(): Unit = {
+		println("Choose a class:")
+		val raceChosen = readln("1.Fighter  2.Mage  3.Ranger 4.Paladin\n 5.Martial Artist 6.Thief")
+		raceChosen match{
+			case 1 => playerCharacter = new Fighter(playerCharacter)
+			case 2 => playerCharacter = new Mage(playerCharacter)
+			case 3 => playerCharacter = new Ranger(playerCharacter)
+			case 4 => playerCharacter = new Paladin(playerCharacter)
+			case 5 => playerCharacter = new MartialArtist(playerCharacter)
+			case 6 => playerCharacter = new Thief(playerCharacter)
+			case unexpected => characterCreator2()
+		}
+		if(raceChosen == 2) mageSpecific()
+		game()
+	}
+
+	def mageSpecific(): Unit = {
+		println("What kind of mage do you want to be?")
+		val mageChoice = readln("1.Black Mage  2.White Mage  3.Red Mage")
+		mageChoice match{
+			case 1 => playerCharacter = new BlkMage(playerCharacter)
+			case 2 => playerCharacter = new WhtMage(playerCharacter)
+			case 3 => playerCharacter = new RedMage(playerCharacter)
+			case unexpected => mageSpecific()
+		}
 	}
 
 //The main menu...pretty self-explanatory
 	def mainMenu(): Unit = {
-
+		println("Would you like to play the game or exit?")
+		val choice = readln("1. Play game      2.Exit")
+		choice match{
+			case 1 => characterCreator1()
+			case 2 => println("Goodbye!")
+			case unexpected => mainMenu()
+		}
 	}
 
 //Run the game

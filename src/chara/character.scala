@@ -3,6 +3,8 @@ The stats assignments and things will be done in the character creator. Too much
 A separate combat mechanics system will be implemented, it's a function of the character's stats after all. 
 
 */
+package chara
+
 import scala.collection.mutable.ArrayBuffer
 
 trait Character{

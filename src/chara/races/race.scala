@@ -1,3 +1,6 @@
+package chara.races
+
+
 abstract class RaceDecorator(char: Character) extends CharacterDecorator(char){
 	//Values and Stats/////////////////////////////////
 	name = char.name
