@@ -4,31 +4,64 @@ A separate combat mechanics system will be implemented, it's a function of the c
 
 */
 
-class Character{
+trait Character{
 //Values and Stats/////////////////////////////////
 	var name: String
 //	Hit Points
-	var hp: Int = 10
-	var maxHP: Int  = 10
+	var hp: Int
+	var maxHP: Int
 
 //	Stats     10 is average, one should be able to rearrange these
-	var str: Int = 10
-	var dex: Int = 10
-	var cons: Int = 10
-	var intl: Int = 10
-	var wis: Int = 10
-	var cha: Int = 10
+	var str: Int 
+	var dex: Int 
+	var cons: Int
+	var intl: Int
+	var wis: Int
+	var cha: Int
 
 //	Mana
-	var mana: Int = 5
+	var mana: Int //established as a function of int and wis
 
 //	Level and experience points
-	var lvl: Int = 1
-	var exp: Int = 0
-	var expToNext: Int = 100
+	var lvl: Int
+	var exp: Int
+	var expToNext: Int 
 
-	var charClass: Clas
-	var charRace: Race
+//Class and race checker
+	var race:String 
+	var clas:String
+}
+
+
+class BaseCharacter extends Character{
+//Values and Stats/////////////////////////////////
+	name = ""
+//	Hit Points
+	hp = 10
+	maxHP = 10
+
+//	Stats     10 is average, one should be able to rearrange these
+	str = 10
+	dex = 10
+	cons = 10
+	intl = 10
+	wis = 10
+	cha = 10
+
+//	Mana
+	mana = 0 //established as a function of int and wis
+
+//	Level and experience points
+	lvl = 1
+	exp = 0
+
+//Class and race checker
+	race = ""
+	clas = ""
+
+}
+
+abstract class CharacterDecorator(char: Character) extends Character{
 
 }
 
