@@ -5,7 +5,10 @@ This is meant to be a single-player RPG experience that does the fun stuff, comb
 It's basically a fight and level up game, no other mechanics have been implemented, they will in the future....maybe.
 This may just be a gamemode soon and the main game will be the more open-ended experience intended.
 
-# To-Do
+## Build Instructions
+Go to the root folder (the one that has src in it) and then use SBT to compile and run this program, so use: sbt package, to package it into a jar or sbt run to run the code directly.
+
+## To-Do
 
 ~~Allow character creator to create characters~~ DONE!
 
