@@ -1,0 +1,100 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/classes/mage.scala:33:25: super may not be used on variable clas[0m
+[0m[[0m[31merror[0m] [0m[0m	clas = "black" + super.clas[0m
+[0m[[0m[31merror[0m] [0m[0m	                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/classes/mage.scala:36:25: super may not be used on variable clas[0m
+[0m[[0m[31merror[0m] [0m[0m	clas = "white" + super.clas[0m
+[0m[[0m[31merror[0m] [0m[0m	                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/classes/mage.scala:39:23: super may not be used on variable clas[0m
+[0m[[0m[31merror[0m] [0m[0m	clas = "red" + super.clas[0m
+[0m[[0m[31merror[0m] [0m[0m	                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/dwa_00.scala:4:14: super may not be used on variable str[0m
+[0m[[0m[31merror[0m] [0m[0m	str = super.str + 0 [0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/dwa_00.scala:5:14: super may not be used on variable dex[0m
+[0m[[0m[31merror[0m] [0m[0m	dex = super.dex + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/dwa_00.scala:6:15: super may not be used on variable cons[0m
+[0m[[0m[31merror[0m] [0m[0m	cons = super.cons + 4[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/dwa_00.scala:7:15: super may not be used on variable intl[0m
+[0m[[0m[31merror[0m] [0m[0m	intl = super.intl + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/dwa_00.scala:8:14: super may not be used on variable wis[0m
+[0m[[0m[31merror[0m] [0m[0m	wis = super.wis + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/dwa_00.scala:9:14: super may not be used on variable cha[0m
+[0m[[0m[31merror[0m] [0m[0m	cha = super.cha + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/elf_00.scala:4:14: super may not be used on variable str[0m
+[0m[[0m[31merror[0m] [0m[0m	str = super.str + 0 [0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/elf_00.scala:5:14: super may not be used on variable dex[0m
+[0m[[0m[31merror[0m] [0m[0m	dex = super.dex + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/elf_00.scala:6:15: super may not be used on variable cons[0m
+[0m[[0m[31merror[0m] [0m[0m	cons = super.cons + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/elf_00.scala:7:15: super may not be used on variable intl[0m
+[0m[[0m[31merror[0m] [0m[0m	intl = super.intl + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/elf_00.scala:8:14: super may not be used on variable wis[0m
+[0m[[0m[31merror[0m] [0m[0m	wis = super.wis + 2[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/elf_00.scala:9:14: super may not be used on variable cha[0m
+[0m[[0m[31merror[0m] [0m[0m	cha = super.cha + 2[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hob_00.scala:5:14: super may not be used on variable str[0m
+[0m[[0m[31merror[0m] [0m[0m	str = super.str + 0 [0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hob_00.scala:6:14: super may not be used on variable dex[0m
+[0m[[0m[31merror[0m] [0m[0m	dex = super.dex + 2[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hob_00.scala:7:15: super may not be used on variable cons[0m
+[0m[[0m[31merror[0m] [0m[0m	cons = super.cons + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hob_00.scala:8:15: super may not be used on variable intl[0m
+[0m[[0m[31merror[0m] [0m[0m	intl = super.intl + 2[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hob_00.scala:9:14: super may not be used on variable wis[0m
+[0m[[0m[31merror[0m] [0m[0m	wis = super.wis + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hob_00.scala:10:14: super may not be used on variable cha[0m
+[0m[[0m[31merror[0m] [0m[0m	cha = super.cha + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hum_00.scala:5:14: super may not be used on variable str[0m
+[0m[[0m[31merror[0m] [0m[0m	str = super.str + 0 [0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hum_00.scala:6:14: super may not be used on variable dex[0m
+[0m[[0m[31merror[0m] [0m[0m	dex = super.dex + 2[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hum_00.scala:7:15: super may not be used on variable cons[0m
+[0m[[0m[31merror[0m] [0m[0m	cons = super.cons + 2[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hum_00.scala:8:15: super may not be used on variable intl[0m
+[0m[[0m[31merror[0m] [0m[0m	intl = super.intl + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hum_00.scala:9:14: super may not be used on variable wis[0m
+[0m[[0m[31merror[0m] [0m[0m	wis = super.wis + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/hum_00.scala:10:14: super may not be used on variable cha[0m
+[0m[[0m[31merror[0m] [0m[0m	cha = super.cha + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/orc_00.scala:4:14: super may not be used on variable str[0m
+[0m[[0m[31merror[0m] [0m[0m	str = super.str + 4 [0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/orc_00.scala:5:14: super may not be used on variable dex[0m
+[0m[[0m[31merror[0m] [0m[0m	dex = super.dex + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/orc_00.scala:6:15: super may not be used on variable cons[0m
+[0m[[0m[31merror[0m] [0m[0m	cons = super.cons + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/orc_00.scala:7:15: super may not be used on variable intl[0m
+[0m[[0m[31merror[0m] [0m[0m	intl = super.intl + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/orc_00.scala:8:14: super may not be used on variable wis[0m
+[0m[[0m[31merror[0m] [0m[0m	wis = super.wis + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/TEST/Documents/GamesRepos/src/main/scala/chara/races/orc_00.scala:9:14: super may not be used on variable cha[0m
+[0m[[0m[31merror[0m] [0m[0m	cha = super.cha + 0[0m
+[0m[[0m[31merror[0m] [0m[0m	            ^[0m
+[0m[[0m[31merror[0m] [0m[0m33 errors found[0m
