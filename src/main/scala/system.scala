@@ -103,7 +103,7 @@ object RPGsystem{
 //The game finite state machine! That's all deliniated below 
 //Combat functions
 	def playerTurn():Unit = {
-		val combatChoice = readLine("1.Attack    2.Spell   3.Check Your HP   4.Check enemy HP   5.Flee\n")
+		val combatChoice = readLine("1.Attack    2.Spell   3.Check Stats   4.Flee\n")
 		if(combatChoice == "1"){
 			damageDeal(damage, enemyCharacter, playerCharacter)
 			enemyTurn()
@@ -117,16 +117,13 @@ object RPGsystem{
 			print(" has ")
 			print(playerCharacter.hp)
 			println("hp.")
-			playerTurn()
-		}
-		else if(combatChoice == "4"){
 			print(enemyCharacter.name)
 			print(" has ")
 			print(enemyCharacter.hp)
 			println("hp.")
 			playerTurn()
 		}
-		else if(combatChoice == "5"){
+		else if(combatChoice == "4"){
 			val escaping = flee()
 			if(escaping) game()
 			else enemyTurn()
@@ -261,10 +258,11 @@ object RPGsystem{
 //The main menu...pretty self-explanatory
 	def mainMenu(): Unit = {
 		println("Would you like to play the game or exit?")
-		val choice = readLine("1. Play game      2.Exit\n")
+		val choice = readLine("1.Fighting Mode   2.Adventure Mode   3.Exit\n")
 		choice match{
 			case "1" => characterCreator1()
-			case "2" => println("Goodbye!")
+			case "2" => println("Adventure Mode not yet implemented!")
+			case "3" => println("Goodbye!")
 			case unexpected => mainMenu()
 		}
 	}
