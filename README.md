@@ -7,7 +7,7 @@ This may just be a gamemode soon and the main game will be the more open-ended e
 
 # To-Do
 
-Allow character creator to create characters
+~~Allow character creator to create characters~~ DONE!
 
 Random enemies appear
 
