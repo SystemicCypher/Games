@@ -1,9 +1,10 @@
 /*
  *	The core of the rpg system, this file contains all the functions needed to operate the game.
  *	It also contains all possible game states - represented by a finite state machine.
- *	
+ *	These are all essentially utility functions and are separate from the main class so they may be used and modified as needed
  *
 */
+
 object RPGsystem{
 //Utility functions
 
@@ -47,6 +48,23 @@ object RPGsystem{
 //Experience to next level function
 	val expToNextLevel = (char: Character) => char.lvl * 100 - char.exp
 
+//Leveled up?
+	def levelUp(char: Character, expNext: Character => Int): Unit = {
+		if (expNext(char) <= 0){
+			char.lvl += 1
+			val remove = expNext(char)
+			char.exp  = 0 - remove
+		}
+		else{
+			val expNeeded = expNext(char)
+			println(s"$char.name needs $expNeeded more experience to level up.")
+		}
+	}
+
+//Learn a spell
+	def addToSpellbook(char: Character, spell: Spell): Unit = {
+		char.spellBook = char.spellBook + spell
+	}
 
 
 
