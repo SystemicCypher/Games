@@ -128,7 +128,7 @@ object RPGsystem{
 			case "6" => playerCharacter = new Thief(playerCharacter)
 			case unexpected => characterCreator2()
 		}
-		if(raceChosen == 2) mageSpecific()
+		if(raceChosen == "2") mageSpecific()
 		game()
 	}
 
