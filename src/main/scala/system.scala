@@ -13,9 +13,14 @@ import chara.classes._
 object RPGsystem{
 //Utility functions
 	var playerCharacter: Characterg = new BaseCharacter()
+	var enemyCharacter: Characterg = new BaseCharacter()
+
 	def acceptCharacter(char: Characterg): Unit = {
 		playerCharacter = char
 	}
+
+	var loopCounter = 0; //temporary thing
+
 
 //Random Number Generator...or for this game RNGsus
 	val rngsus = scala.util.Random
@@ -27,14 +32,18 @@ object RPGsystem{
 
 //Actually uses the damage to some effect 
 	def damageDeal(damage: Characterg => Int, target:Characterg, attacker: Characterg): Unit = {
-		if(target.hp - damage(attacker)  <=  0) {
+		val damaged = damage(attacker)
+		if(target.hp - damaged  <=  0) {
 			target.hp = 0 
-			println(s"$target.name has died.")
+			print(target.name)
+			println(" has died.")
 		}
 		else {
-			target.hp = target.hp - damage(attacker)
-			val damaged = damage(attacker)
-			println(s"$target.name took $damaged points of damage!")
+			target.hp -= damaged
+			print(target.name)
+			print(" took ")
+			print(damaged)
+			println(" points of damage!")
 		}
 	} 
 
@@ -43,14 +52,18 @@ object RPGsystem{
 
 //Actually uses the healing amount to some effect
 	def healDeal(heal: Characterg => Int, target: Characterg, healer: Characterg): Unit = {
-		if(target.hp + heal(healer) >= target.maxHP) {
+		val healed = heal(healer)
+		if(target.hp + healed >= target.maxHP) {
 			target.hp = target.maxHP
-			println(s"$target.name has been fully healed!")
+			print(target.name)
+			println(" has been fully healed!")
 		}
 		else {
-			target.hp = target.hp + heal(healer)
-			val healed = heal(healer)
-			println(s"$target.name gained $healed hp!")
+			target.hp += healed
+			print(target.name)
+			print(" gained ")
+			print(healed)
+			println(" hp!")
 		}
 	}
 
@@ -66,9 +79,13 @@ object RPGsystem{
 		}
 		else{
 			val expNeeded = expNext(char)
-			println(s"$char.name needs $expNeeded more experience to level up.")
+			print(char.name)
+			print( "needs ")
+			print(expNeeded)
+			println(" experience to level up.")
 		}
 	}
+
 
 //Learn a spell
 	//def addToSpellbook(char: Characterg, spell: Spell): Unit = {
@@ -76,30 +93,122 @@ object RPGsystem{
 	//}
 
 
+	def outOfCombat(){
 
+	}
 
 
 
 
 //The game finite state machine! That's all deliniated below 
 //Combat functions
-	def playerTurn(){
-
+	def playerTurn():Unit = {
+		val combatChoice = readLine("1.Attack    2.Spell   3.Check Your HP   4.Check enemy HP   5.Flee\n")
+		if(combatChoice == "1"){
+			damageDeal(damage, enemyCharacter, playerCharacter)
+			enemyTurn()
+		}
+		else if(combatChoice == "2"){
+			println("No spells yet!")
+			playerTurn()
+		}
+		else if(combatChoice == "3"){
+			print(playerCharacter.name)
+			print(" has ")
+			print(playerCharacter.hp)
+			println("hp.")
+			playerTurn()
+		}
+		else if(combatChoice == "4"){
+			print(enemyCharacter.name)
+			print(" has ")
+			print(enemyCharacter.hp)
+			println("hp.")
+			playerTurn()
+		}
+		else if(combatChoice == "5"){
+			val escaping = flee()
+			if(escaping) game()
+			else enemyTurn()
+		}
+		else{
+			println("Invalid choice...")
+			playerTurn()
+		}
 	}
-	def enemyTurn(){
 
+	def enemyTurn():Unit ={
+		if(enemyCharacter.hp > 0){
+			damageDeal(damage, playerCharacter, enemyCharacter)
+		}
+		combat()
 	}
 
+	def combat(): Unit = {
+		if(playerCharacter.hp == 0 || enemyCharacter.hp == 0){
+			enemyCharacter = new BaseCharacter()
+			if(playerCharacter.hp == 0){
+				loopCounter = 15
+				game()
+			}
+			else{
+				println("You defeated the enemy!")
+				game()
+			}
+		}
+		else{
+			playerTurn()
+		}
+	}
+
+	def flee(): Boolean = {
+		val escape = rngsus.nextInt(100)
+		if(escape > 85){
+			println("Escape failed...")
+			false
+		}
+		else{
+			println("Escaped!")
+			true
+		}
+	}
+
+	def enemyCreation(): Unit ={
+		var rando = rngsus.nextInt(100)
+		if(rando >= 0 && rando < 20){
+			enemyCharacter = new Elf(enemyCharacter)
+			enemyCharacter = new Fighter(enemyCharacter)
+			enemyCharacter.name = "Enemy elf"
+		}
+		else{
+			enemyCharacter = new Orc(enemyCharacter)
+			enemyCharacter = new Fighter(enemyCharacter)
+			enemyCharacter.name = "Enemy orc"
+		}
+	}
 
 
 
 //Game
-	def game(){
-		println("Your name is:")
-		println(playerCharacter.name)
-		println("a")
-		println(playerCharacter.race)
-		println(playerCharacter.clas)
+	def game(): Unit = {
+		var random = rngsus.nextInt(100)
+		
+		if(loopCounter == 15) print("")
+		else if(random <= 20){
+			println("You explore...")
+			outOfCombat()
+			loopCounter += 1
+			game()
+		}
+		else{
+			println("You explore...")
+			outOfCombat()
+			loopCounter += 1
+			println("An enemy strikes!")
+			enemyCreation()
+			combat()
+			game()
+		}
 
 	}
 
@@ -122,7 +231,7 @@ object RPGsystem{
 
 	def characterCreator2(): Unit = {
 		println("Choose a class:")
-		val raceChosen = readLine("1.Fighter  2.Mage  3.Ranger 4.Paladin\n 5.Martial Artist 6.Thief\n")
+		val raceChosen = readLine("1.Fighter  2.Mage  3.Ranger 4.Paladin 5.Martial Artist 6.Thief\n")
 		raceChosen match{
 			case "1" => playerCharacter = new Fighter(playerCharacter)
 			case "2" => playerCharacter = new Mage(playerCharacter)
