@@ -1,14 +1,13 @@
-class Mage extends Clas{
+class Mage(char: Character) extends ClassDecorator(char){
+	clas = "mage"
 }
 
-trait BlackMage extends Mage{
-	
+class BlkMage(char: Character) extends Mage(char){
+	clas = "black" + super.clas
 }
-
-trait RedMage extends Mage{
-	
+class WhtMage(char: Character) extends Mage(char){
+	clas = "white" + super.clas
 }
-
-trait WhiteMage extends Mage{
-	
+class RedMage(char: Character) extends Mage(char){
+	clas = "red" + super.clas
 }

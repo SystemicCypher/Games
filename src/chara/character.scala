@@ -3,6 +3,7 @@ The stats assignments and things will be done in the character creator. Too much
 A separate combat mechanics system will be implemented, it's a function of the character's stats after all. 
 
 */
+import scala.collection.mutable.ListBuffer
 
 trait Character{
 //Values and Stats/////////////////////////////////
@@ -30,6 +31,9 @@ trait Character{
 //Class and race checker
 	var race:String 
 	var clas:String
+
+//Spellbook - contains spells for the characters
+	var spellBook = ListBuffer[Spell]()
 }
 
 
@@ -62,6 +66,29 @@ class BaseCharacter extends Character{
 }
 
 abstract class CharacterDecorator(char: Character) extends Character{
+	//Values and Stats/////////////////////////////////
+	name = char.name
+//	Hit Points
+	hp = char.hp
+	maxHP = char.maxHP
 
+//	Stats     10 is average, one should be able to rearrange these
+	str = char.str
+	dex = char.dex
+	cons = char.cons
+	intl = char.intl
+	wis = char.wis
+	cha = char.cha
+
+//	Mana
+	mana = char.mana //established as a function of int and wis
+
+//	Level and experience points
+	lvl = char.lvl
+	exp = char.exp
+
+//Class and race checker
+	race = char.race
+	clas = char.clas
 }
 

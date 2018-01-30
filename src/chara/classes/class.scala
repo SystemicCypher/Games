@@ -1,9 +1,26 @@
-class Clas extends CharacterDecorator{
-	//class modifiers
-	var strBoost: Int 
-	var dexBoost: Int 
-	var consBoost: Int 
-	var intlBoost: Int 
-	var wisBoost: Int 
-	var chaBoost: Int
+abstract class ClassDecorator extends CharacterDecorator{
+	//Values and Stats/////////////////////////////////
+	name = char.name
+//	Hit Points
+	hp = char.hp
+	maxHP = char.maxHP
+
+//	Stats     10 is average, one should be able to rearrange these
+	str = char.str
+	dex = char.dex
+	cons = char.cons
+	intl = char.intl
+	wis = char.wis
+	cha = char.cha
+
+//	Mana
+	mana = char.mana //established as a function of int and wis
+
+//	Level and experience points
+	lvl = char.lvl
+	exp = char.exp
+
+//Class and race checker
+	race = char.race
+	clas = char.clas
 }
