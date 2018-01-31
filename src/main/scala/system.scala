@@ -94,7 +94,23 @@ object RPGsystem{
 
 
 	def outOfCombat(){
-
+		val choice = readLine("1.Heal    2.Shop  3.Check Inventory   4.Continue\n")
+		if(choice == "1"){
+			healDeal(heal, playerCharacter, playerCharacter)
+		}
+		else if(choice == "2"){
+			println("No shop")
+		}
+		else if(choice == "3"){
+			println("No Inventory")
+		}
+		else if(choice == "4"){
+			prinln("Onward...")
+		}
+		else{
+			println("Invalid choice...")
+			outOfCombat()
+		}
 	}
 
 
@@ -135,7 +151,8 @@ object RPGsystem{
 	}
 
 	def enemyTurn():Unit ={
-		if(enemyCharacter.hp > 0){
+		val miss = rngsus.nextInt(9)
+		if(enemyCharacter.hp > 0 && miss < 7){
 			damageDeal(damage, playerCharacter, enemyCharacter)
 		}
 		combat()
