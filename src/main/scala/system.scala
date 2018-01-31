@@ -76,13 +76,44 @@ object RPGsystem{
 			char.lvl += 1
 			val remove = expNext(char)
 			char.exp  = 0 - remove
+			boostSkill(char)
 		}
 		else{
 			val expNeeded = expNext(char)
 			print(char.name)
-			print( "needs ")
+			print(" needs ")
 			print(expNeeded)
 			println(" experience to level up.")
+		}
+	}
+
+//Gain 1 skill point
+	def boostSkill(char: Characterg): Unit = {
+		print(char.name)
+		println("'s stats:\n")
+		print("1.Str: ")
+		println(char.str)
+		print("2.Dex: ")
+		println(char.dex)
+		print("3.Int: ")
+		println(char.intl)
+		print("4.Wis: ")
+		println(char.wis)
+		print("5.Cha: ")
+		println(char.cha)
+		print("6.Cons: ")
+		println(char.cons)
+		val boosted = readLine("Choose skill to boost: \n")
+
+
+		boosted match{
+			case "1" => char.str += 1
+			case "2" => char.dex += 1
+			case "3" => char.intl += 1
+			case "4" => char.wis += 1
+			case "5" => char.cha += 1
+			case "6" => char.cons += 1
+			case unexpected => characterCreator2()
 		}
 	}
 
@@ -97,15 +128,18 @@ object RPGsystem{
 		val choice = readLine("1.Heal    2.Shop  3.Check Inventory   4.Continue\n")
 		if(choice == "1"){
 			healDeal(heal, playerCharacter, playerCharacter)
+			outOfCombat()
 		}
 		else if(choice == "2"){
 			println("No shop")
+			outOfCombat()
 		}
 		else if(choice == "3"){
 			println("No Inventory")
+			outOfCombat()
 		}
 		else if(choice == "4"){
-			prinln("Onward...")
+			println("Onward...")
 		}
 		else{
 			println("Invalid choice...")
@@ -146,6 +180,7 @@ object RPGsystem{
 		}
 		else if(combatChoice == "5"){
 			healDeal(heal, playerCharacter, playerCharacter)
+			enemyTurn()
 		}
 		else{
 			println("Invalid choice...")
@@ -170,6 +205,8 @@ object RPGsystem{
 			}
 			else{
 				println("You defeated the enemy!")
+				playerCharacter.exp += 100
+				levelUp(playerCharacter, expToNextLevel)
 				game()
 			}
 		}
