@@ -10,11 +10,24 @@ Go to the root folder (the one that has src in it) and then use SBT to compile a
 
 ## To-Do
 
+* Fix level-ups (every damage point is 1xp? - figure out levelling system)
+
+* Implement spells and spellbooks
+
+* Add random shops
+
+* Add libraries
+
+* Add inventory and equips
+
+* Implement the master-student mechanic (Adventure only)
+
+### ~~Tier 1 - complete!~~
 ~~Allow character creator to create characters~~ DONE!
 
 ~~Random enemies appear~~
 
 ~~Combat (need to punch orcs in the face)~~
 
-And that's it for iteration 1 of this game. Next iteration will flesh out the details more and adjust the numbers.
+
 
