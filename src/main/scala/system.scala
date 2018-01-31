@@ -144,6 +144,9 @@ object RPGsystem{
 			if(escaping) game()
 			else enemyTurn()
 		}
+		else if(combatChoice == "5"){
+			healDeal(heal, playerCharacter, playerCharacter)
+		}
 		else{
 			println("Invalid choice...")
 			playerTurn()
